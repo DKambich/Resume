@@ -60,7 +60,20 @@
         </nav>
 
     </header>
-    <main>
+    <main class="bg-secondary bg-gradient pt-2">
+        <div class="container">
+            <div class="d-flex justify-content-end align-items-center gap-2">
+                <button id="printPage" type="button" class="btn btn-dark" aria-label="Print" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Print">
+                    <i class="bi bi-printer-fill"></i>
+                </button>
+                <button id="toggleDarkMode" type="button" class="btn btn-dark" aria-label="Toggle Dark Mode" data-bs-toggle="tooltip"
+                    data-bs-placement="bottom" title="Toggle Dark Mode">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
+            </div>
+
+        </div>
         <h2>This is the main area</h2>
         <section>
             <h3>This is a section</h3>
@@ -75,6 +88,15 @@
     <footer>
         <h2>This is the footer area</h2>
     </footer>
+
+    <!-- TODO: Move this to a script file -->
+    <script>
+        // Enable Tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 </body>
 
 </html>
