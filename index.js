@@ -18,6 +18,14 @@ window.onload = async () => {
 
   document.getElementById("workExperienceLoader").remove();
   createWorkExperienceCards(workExperiences);
+
+  setupShareModal();
+  document.getElementById("sharePage").onclick = () => {
+    if (navigator.share) {
+    } else {
+      showShareModal();
+    }
+  };
 };
 
 async function loadResources() {
@@ -79,4 +87,24 @@ function createWorkExperienceCards(workExperiences) {
   workExperienceArea.innerHTML = workExperiences
     .map((experience) => createWorkExperienceCard(experience))
     .join("\n");
+}
+
+function setupShareModal() {
+  const shareModalDiv = document.getElementById("shareModal");
+
+  shareModalDiv.addEventListener("show.bs.modal", () => console.log("Showing"));
+  shareModalDiv.addEventListener("shown.bs.modal", () => console.log("Shown"));
+  shareModalDiv.addEventListener("hide.bs.modal", () => console.log("Hiding"));
+  shareModalDiv.addEventListener("hidden.bs.modal", () =>
+    console.log("Hidden")
+  );
+
+  shareModalDiv.querySelector("#modalShareButton").onclick = () =>
+    console.log("Shared!");
+}
+
+function showShareModal() {
+  const shareModalDiv = document.getElementById("shareModal");
+  const shareModalBS = bootstrap.Modal.getOrCreateInstance(shareModalDiv);
+  shareModalBS.show();
 }
