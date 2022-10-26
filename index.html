@@ -21,52 +21,48 @@
 <!-- TODO: Ensure content uses semantic tags https://www.w3schools.com/html/html5_semantic_elements.asp -->
 
 <body>
-    <header>
-        <div class="bg-success bg-gradient text-white py-5">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 text-md-center">
-                        <img class="rounded-circle img-fluid" width="175" height="175"
-                            src="/resources/images/headshot.jpg" alt="Daniel Kambich Headshot" />
-                    </div>
-                    <div class="col-md-9">
-                        <h1>Daniel Kambich</h1>
-                        <h5>Software and Machine Intelligence Engineer</h5>
-                        <p class="border-top pt-2">
-                            Associate ITDP at Polaris Inc. navigating through four exciting rotations and engaging with
-                            new roles and technologies. Purdue graduate with a passion for Software Engineering and
-                            Machine Learning, guided with an entrepreneurial mindset. Yearning to discover and develop
-                            the technologies of tomorrow while advocating for their responsible use. Always pushing
-                            forward and asking, 'What's next?'
-                        </p>
-                    </div>
+    <header class="bg-success bg-gradient text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 text-md-center">
+                    <img class="rounded-circle img-fluid" width="175" height="175" src="/resources/images/headshot.jpg"
+                        alt="Daniel Kambich Headshot" />
+                </div>
+                <div class="col-md-9">
+                    <h1>Daniel Kambich</h1>
+                    <h5>Software and Machine Intelligence Engineer</h5>
+                    <p class="border-top pt-2">
+                        Associate ITDP at Polaris Inc. navigating through four exciting rotations and engaging with
+                        new roles and technologies. Purdue graduate with a passion for Software Engineering and
+                        Machine Learning, guided with an entrepreneurial mindset. Yearning to discover and develop
+                        the technologies of tomorrow while advocating for their responsible use. Always pushing
+                        forward and asking, 'What's next?'
+                    </p>
                 </div>
             </div>
         </div>
-
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="navbar-nav nav-justified container">
-                <a class="nav-link" href="mailto:daniel.kambich@gmail.com" target="_blank">
-                    <i class="bi bi-envelope-fill"></i>
-                    daniel.kambich@gmail.com</a>
-                <a class="nav-link" href="https://goo.gl/maps/QkMkJ6m9JjcKufhLA" target="_blank">
-                    <i class="bi bi-geo-alt-fill"> </i>
-                    Plymouth, MN</a>
-                <a class="nav-link" href="https://github.com/DKambich" target="_blank">
-                    <i class="bi bi-github"></i>
-                    My Github</a>
-            </div>
-        </nav>
-
     </header>
-    <main class="bg-dark bg-gradient bg-opacity-75 pt-2">
+    <nav class="navbar navbar-expand-md bg-light sticky-md-top">
+        <div class="navbar-nav nav-justified container">
+            <a class="nav-link" href="mailto:daniel.kambich@gmail.com" target="_blank">
+                <i class="bi bi-envelope-fill"></i>
+                daniel.kambich@gmail.com</a>
+            <a class="nav-link" href="https://goo.gl/maps/QkMkJ6m9JjcKufhLA" target="_blank">
+                <i class="bi bi-geo-alt-fill"> </i>
+                Plymouth, MN</a>
+            <a class="nav-link" href="https://github.com/DKambich" target="_blank">
+                <i class="bi bi-github"></i>
+                My Github</a>
+        </div>
+    </nav>
+    <main class="bg-gradient pt-2" style="background-color: #EEE;">
         <div class="container">
             <div class="d-flex justify-content-end align-items-center gap-2">
-                <button id="printPage" type="button" class="btn btn-dark" aria-label="Print" data-bs-toggle="tooltip"
+                <button id="printPage" type="button" class="btn btn-light" aria-label="Print" data-bs-toggle="tooltip"
                     data-bs-placement="bottom" title="Print">
                     <i class="bi bi-printer-fill"></i>
                 </button>
-                <button id="toggleDarkMode" type="button" class="btn btn-dark" aria-label="Toggle Dark Mode"
+                <button id="toggleDarkMode" type="button" class="btn btn-light" aria-label="Toggle Dark Mode"
                     data-bs-toggle="tooltip" data-bs-placement="bottom" title="Toggle Dark Mode">
                     <i class="bi bi-moon-fill"></i>
                 </button>
@@ -74,10 +70,10 @@
 
         </div>
         <section class="container">
-            <h1 class="text-light">Work Experience</h1>
+            <h1 class="">Work Experience</h1>
             <div class="row">
                 <div class="col-md d-flex align-items-stretch">
-                    <div class="card text-bg-dark mb-4">
+                    <div class="card mb-4">
                         <div class="card-body">
                             <h4 class="card-title fw-bold">Polaris Inc.</h4>
                             <h6 class="card-text fw-bold">Software Developer</h6>
@@ -92,7 +88,7 @@
                     </div>
                 </div>
                 <div class="col-md d-flex align-items-stretch">
-                    <div class="card text-bg-dark mb-4">
+                    <div class="card  mb-4">
                         <div class="card-body">
                             <h4 class="card-title fw-bold">Polaris Inc.</h4>
                             <h6 class="card-text fw-bold">Data and Automation Engineer</h6>
@@ -108,7 +104,7 @@
             </div>
             <div class="row">
                 <div class="col-md d-flex align-items-stretch">
-                    <div class="card text-bg-dark mb-4">
+                    <div class="card  mb-4">
                         <div class="card-body">
                             <h4 class="card-title fw-bold">Polaris Inc.</h4>
                             <h6 class="card-text fw-bold">Associate Business Analyst</h6>
@@ -123,7 +119,7 @@
                     </div>
                 </div>
                 <div class="col-md d-flex align-items-stretch">
-                    <div class="card text-bg-dark mb-4">
+                    <div class="card  mb-4">
                         <div class="card-body">
                             <h4 class="card-title fw-bold">Purdue University</h4>
                             <h6 class="card-text fw-bold">Undergraduate Teaching Assistant</h6>
@@ -139,7 +135,7 @@
             </div>
             <div class="row">
                 <div class="col-md d-flex align-items-stretch">
-                    <div class="card text-bg-dark mb-4">
+                    <div class="card  mb-4">
                         <div class="card-body">
                             <h4 class="card-title fw-bold">Polaris Inc.</h4>
                             <h6 class="card-text fw-bold">Digital and Infromation Services Intern</h6>
@@ -159,7 +155,7 @@
                     </div>
                 </div>
                 <div class="col-md d-flex align-items-stretch">
-                    <div class="card text-bg-dark mb-4">
+                    <div class="card  mb-4">
                         <div class="card-body">
                             <h4 class="card-title fw-bold">State Farm</h4>
                             <h6 class="card-text fw-bold">Software Engineering Intern</h6>
@@ -188,7 +184,7 @@
             <h3>This is a section</h3>
         </section>
     </main>
-    <footer class="bg-dark">
+    <footer class="">
         <h2>This is the footer area</h2>
     </footer>
 
