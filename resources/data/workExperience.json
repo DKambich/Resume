@@ -1,10 +1,94 @@
 [
     {
-        "company": "Company Name",
-        "jobTitle": "Job Title",
-        "startDate": "2000-01-1T00:00:00+00:00",
-        "endDate": "2022-01-1T00:00:00+00:00",
-        "description": "This is a place to add a description of the role",
-        "skills": ["Skill 1", "Skill 2"]
+        "company": "Polaris Inc.",
+        "jobTitle": "Software Developer",
+        "startDate": "2022-07-15",
+        "endDate": null,
+        "description": "Worked on the Dealer Retail team as a full-stack developer during the third rotation of the IT development program. Utilized .NET 6, SQL, and internal REST APIs to build a web application that conducted the vehicle buying process at a dealership which includes vehicle setup, customer information, customer acceptance, and vehicle registration. Completed various user stories during each development sprint, which were facilitated by the Scrum methodology.",
+        "skills": [
+            ".NET 6",
+            "C#",
+            "SQL",
+            "REST APIs",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Git"
+        ],
+        "icon": "bi-car-front-fill"
+    },
+    {
+        "company": "Polaris Inc.",
+        "jobTitle": "Data and Automation Engineer",
+        "startDate": "2022-01-15",
+        "endDate": "2022-07-15",
+        "description": "Worked as a part of the Modern Analytics team during the second rotation of the IT development program. Harnessed a variety of self-service data science and automation tools, including Alteryx, Power Automate, Power BI, Snowflake, and Alation. Engineered multiple automation and analytical solutions for business stakeholders.",
+        "skills": [
+            "Alteryx",
+            "Snowflake",
+            "Microsoft Power Apps",
+            "Microsoft Power Automate",
+            "Microsoft Power BI",
+            "SharePoint",
+            "Alation"
+        ],
+        "icon": "bi-car-front-fill"
+    },
+    {
+        "company": "Polaris Inc.",
+        "jobTitle": "Associate Business Analyst",
+        "startDate": "2021-06-1",
+        "endDate": "2022-01-15",
+        "description": "Worked on part of the Operations and Manufacturing team during the first rotation of the IT development program. Utilized Power Apps to develop an application to classify and process warranty claims. Tested a manufacturing and assembly tracking system using Postman and Microsoft SQL Server. Developed Product Ownership skills through managing sprint story boards and collecting story requirements from business stakeholders.",
+        "skills": [
+            "Microsoft Power Apps",
+            "Microsoft Excel",
+            "Business Analysis",
+            "SQL"
+        ],
+        "icon": "bi-car-front-fill"
+    },
+    {
+        "company": "Purdue University",
+        "jobTitle": "Undergraduate Teaching Assistant",
+        "startDate": "2019-08-15",
+        "endDate": "2021-05-15",
+        "description": "Worked hands on with students in Purdue's Systems Programming course to help them better understand difficult concepts and complex system-level code during weekly labs. Additionally, assisted students in learning debugging practices, sharpening C/C++ knowledge, and strengthening understanding of course material during extra office hours.",
+        "skills": [
+            "C",
+            "C++",
+            "UNIX",
+            "Bash"
+        ],
+        "icon": "bi-book-fill"
+    },
+    {
+        "company": "Polaris Inc.",
+        "jobTitle": "Digital and Infromation Services Intern",
+        "startDate": "2020-06-15",
+        "endDate": "2020-07-15",
+        "description": " Worked as part of the CRM Customer team. Implemented automation scripts to aid the in the bi-weekly creation of QA data. Created a POC postal code validator tool by comparing and contrasting several postal code data solutions. Designed a system to batch and process large datasets without overwhelming system infrastructure with high volumes of data.",
+        "skills": [
+            "REST APIs",
+            "BlazeMeter",
+            "Visio"
+        ],
+        "icon": "bi-car-front-fill"
+    },
+    {
+        "company": "State Farm",
+        "jobTitle": "Software Engineering Intern",
+        "startDate": "2019-05-15",
+        "endDate": "2019-08-15",
+        "description": " Utilized JavaScript, Python, and PostgreSQL to develop a tool to plot geographic and spatial data on a responsive, interactive map and additionally perform a variety of analyses of the data. This tool was then extended into multiple variations of mapping applications, each designed to aid in a specific type of analysis.",
+        "skills": [
+            "Python",
+            "PostgreSQL",
+            "JavaScript",
+            "HTML",
+            "CSS",
+            "Git"
+        ],
+        "icon": "bi-receipt-cutoff"
     }
 ]
