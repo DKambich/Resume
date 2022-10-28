@@ -1,0 +1,12 @@
+{
+    "languages": [
+        {
+            "name": "Python",
+            "rating": 1,
+            "icon": "si si-python"
+        }
+    ],
+    "frameworks": [],
+    "applications": [],
+    "technologies": []
+}
