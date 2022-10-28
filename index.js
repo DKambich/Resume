@@ -14,6 +14,13 @@ const months = [
 ];
 
 window.onload = async () => {
+  // Enable Bootsrap Tooltips
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+
+  
   let { workExperiences } = await loadResources();
 
   document.getElementById("workExperienceLoader").remove();
@@ -26,6 +33,8 @@ window.onload = async () => {
       showShareModal();
     }
   };
+
+
 };
 
 async function loadResources() {
