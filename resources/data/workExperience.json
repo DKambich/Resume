@@ -15,7 +15,7 @@
             "CSS",
             "Git"
         ],
-        "icon": "bi-car-front-fill"
+        "icon": "bi bi-car-front-fill"
     },
     {
         "company": "Polaris Inc.",
@@ -32,7 +32,7 @@
             "SharePoint",
             "Alation"
         ],
-        "icon": "bi-car-front-fill"
+        "icon": "bi bi-car-front-fill"
     },
     {
         "company": "Polaris Inc.",
@@ -46,7 +46,7 @@
             "Business Analysis",
             "SQL"
         ],
-        "icon": "bi-car-front-fill"
+        "icon": "bi bi-car-front-fill"
     },
     {
         "company": "Purdue University",
@@ -60,7 +60,7 @@
             "UNIX",
             "Bash"
         ],
-        "icon": "bi-book-fill"
+        "icon": "bi bi-book-fill"
     },
     {
         "company": "Polaris Inc.",
@@ -73,7 +73,7 @@
             "BlazeMeter",
             "Visio"
         ],
-        "icon": "bi-car-front-fill"
+        "icon": "bi bi-car-front-fill"
     },
     {
         "company": "State Farm",
@@ -89,6 +89,6 @@
             "CSS",
             "Git"
         ],
-        "icon": "bi-receipt-cutoff"
+        "icon": "bi bi-receipt-cutoff"
     }
 ]

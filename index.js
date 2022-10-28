@@ -67,7 +67,7 @@ function createWorkExperienceCard(workItem) {
     <div class="col d-flex align-items-stretch">
         <div class="card mb-4">
             <div class="card-body">
-                <h4 class="card-title fw-bold"><i class="me-2 bi ${icon}"></i>${company}</h4>
+                <h4 class="card-title fw-bold"><i class="me-2 ${icon}"></i>${company}</h4>
                 <h6 class="card-text fw-bold">${jobTitle}</h6>
                 <span class="card-subtitle text-muted"><time>${startDateText}</time> - ${endDateText}</span>
                 <p class="card-text fw-lighter">
