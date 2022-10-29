@@ -34,7 +34,11 @@ window.onload = async () => {
   setupShareModal();
   document.getElementById("sharePage").onclick = () => {
     if (navigator.share) {
-      navigator.share({ text: `Check out Daniel Kambich's resume site: ${window.location.href}` });
+      navigator.share({
+        title: "Daniel Kambich Website",
+        text: "Check out Daniel Kambich's resume website!",
+        url: window.location.href,
+      });
     } else {
       showShareModal();
     }
