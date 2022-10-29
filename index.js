@@ -113,7 +113,7 @@ function createSkillProgressBar(skill) {
     .map(
       (_, index) =>
         `<i class="bi bi-star-fill ${
-          index > 5 - rating ? "" : "text-warning"
+          index >= 5 - rating ? "" : "text-warning"
         }"></i>`
     )
     .join(" ");
