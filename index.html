@@ -68,19 +68,19 @@
     <main class="bg-gradient py-2" style="background-color: #EEE;">
         <!-- Page Actions -->
         <div class="container d-flex justify-content-end align-items-center gap-2 mb-4">
-            // TODO: Implement printing resume
+            <!-- // TODO: Implement printing resume -->
             <button id="printPage" type="button" class="btn btn-light" aria-label="Print" data-bs-toggle="tooltip"
                 data-bs-placement="bottom" title="Print">
                 <i class="bi bi-printer-fill"></i>
             </button>
 
-            // TODO: Implement sharing
+            <!-- // TODO: Implement sharing -->
             <button id="sharePage" type="button" class="btn btn-light" aria-label="Share" data-bs-toggle="tooltip"
                 data-bs-placement="bottom" title="Share">
                 <i class="bi bi-share-fill"></i>
             </button>
 
-            // TODO: Implement toggling dark mode
+            <!-- // TODO: Implement toggling dark mode -->
             <button id="themePage" type="button" class="btn btn-light" aria-label="Toggle Dark Mode"
                 data-bs-toggle="tooltip" data-bs-placement="bottom" title="Toggle Dark Mode">
                 <i class="bi bi-moon-fill"></i>
@@ -113,11 +113,54 @@
         </section>
         <!-- Skills Section -->
         <section class="container">
-            <button class="dropdown-item d-flex align-items-center mb-4" data-bs-toggle="collapse">
+            <button class="dropdown-item d-flex align-items-center mb-4" data-bs-toggle="collapse" href="#skillsArea">
                 <h1 class="display-6 flex-grow-1 mb-0">Skills</h1>
                 <!-- TODO: Add rotating caret when collapsing content -->
                 <i class="bi bi-caret-down-fill "></i>
             </button>
+
+            <div id="skillsArea" class="collapse show ">
+                <!-- Languages Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Languages</h5>
+                        <div id="languages">
+                            <div class="my-4 d-flex justify-content-center">
+                                <div class="spinner-border" role="status">
+                                    <span class="visually-hidden">Loading Skills - Languages...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Technologies Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Technologies</h5>
+                        <div id="technologies">
+                            <div class="my-4 d-flex justify-content-center">
+                                <div class="spinner-border" role="status">
+                                    <span class="visually-hidden">Loading Skills - Technologies...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tools/Applications Card -->
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">Tools & Applications</h5>
+                        <div id="toolsAndApplications">
+                            <div class="my-4 d-flex justify-content-center">
+                                <div class="spinner-border" role="status">
+                                    <span class="visually-hidden">Loading Skills - Tools & Applications...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!-- Potential icons for different skills -->
             <!-- https://simpleicons.org/ -->

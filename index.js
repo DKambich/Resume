@@ -15,16 +15,21 @@ const months = [
 
 window.onload = async () => {
   // Enable Bootsrap Tooltips
-  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  var tooltipTriggerList = [].slice.call(
+    document.querySelectorAll('[data-bs-toggle="tooltip"]')
+  );
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-      return new bootstrap.Tooltip(tooltipTriggerEl)
-  })
+    return new bootstrap.Tooltip(tooltipTriggerEl);
+  });
 
-  
-  let { workExperiences } = await loadResources();
+  let { workExperiences, skills } = await loadResources();
 
   document.getElementById("workExperienceLoader").remove();
   createWorkExperienceCards(workExperiences);
+
+  createSkillProgressBars(skills.languages, "languages");
+  createSkillProgressBars(skills.technologies, "technologies");
+  createSkillProgressBars(skills.toolsAndapplications, "toolsAndApplications");
 
   setupShareModal();
   document.getElementById("sharePage").onclick = () => {
@@ -33,20 +38,21 @@ window.onload = async () => {
       showShareModal();
     }
   };
-
-
 };
 
 async function loadResources() {
   // TODO: Remove artificial delay
-  // const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 1000));
+  const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const workExperiencePromise = await fetch(
     "./resources/data/workExperience.json"
   );
 
+  const skillsPromise = await fetch("./resources/data/skills.json");
+
   return {
     workExperiences: await workExperiencePromise.json(),
+    skills: await skillsPromise.json(),
   };
 }
 
@@ -95,6 +101,68 @@ function createWorkExperienceCards(workExperiences) {
   let workExperienceArea = document.getElementById("workExperienceArea");
   workExperienceArea.innerHTML = workExperiences
     .map((experience) => createWorkExperienceCard(experience))
+    .join("\n");
+}
+
+function createSkillProgressBar(skill) {
+  let { name, rating, icon } = skill;
+
+  let skillStr = "";
+  let skillIconHtml = Array(5)
+    .fill(0)
+    .map(
+      (_, index) =>
+        `<i class="bi bi-star-fill ${
+          index > 5 - rating ? "" : "text-warning"
+        }"></i>`
+    )
+    .join(" ");
+  let skillValue = 0;
+  if (rating == 0) {
+    skillStr = "Proficient";
+    skillValue = 100;
+  } else if (rating == 1) {
+    skillStr = "Advanced";
+    skillValue = 75;
+  } else if (rating == 2) {
+    skillStr = "Intermediate";
+    skillValue = 50;
+  } else if (rating == 3) {
+    skillStr = "Novice";
+    skillValue = 25;
+  }
+
+  return `
+    <div class="d-flex align-items-center">
+      <i class="fs-4 me-3 ${icon}"></i>
+      <div class="d-block d-sm-none">
+        <span class="me-2">${name}</span>
+        <span> ${skillIconHtml}</span>
+      </div>
+      <div class="progress d-none d-sm-block flex-grow-1" style="height: 1.5rem;">
+        <div class="progress-bar w-${skillValue}  px-3 bg-success fw-bold d-flex flex-row justify-content-between align-items-center" role="progressbar" aria-valuenow="${skillValue}" aria-valuemin="0" aria-valuemax="100">
+          <span>
+              ${name}
+          </span>
+          <span>
+              ${skillStr}
+          </span>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function createSkillProgressBars(skills, subskillID) {
+  skills.sort((a, b) => {
+    return a.rating == b.rating
+      ? a.name.localeCompare(b.name)
+      : a.rating - b.rating;
+  });
+
+  let subskillArea = document.getElementById(subskillID);
+  subskillArea.innerHTML = skills
+    .map((skill) => createSkillProgressBar(skill))
     .join("\n");
 }
 

@@ -1,12 +1,128 @@
 {
     "languages": [
         {
+            "name": "Java",
+            "rating": 0,
+            "icon": "si si-java"
+        },
+        {
+            "name": "Dart",
+            "rating": 0,
+            "icon": "si si-dart"
+        },
+        {
+            "name": "JavaScript",
+            "rating": 0,
+            "icon": "si si-javascript"
+        },
+        {
             "name": "Python",
             "rating": 1,
             "icon": "si si-python"
+        },
+        {
+            "name": "Typescript",
+            "rating": 1,
+            "icon": "si si-typescript"
+        },
+        {
+            "name": "C/C++",
+            "rating": 1,
+            "icon": "si si-cplusplus"
+        },
+        {
+            "name": "SQL",
+            "rating": 1,
+            "icon": "si si-postgresql"
+        },
+        {
+            "name": "C#",
+            "rating": 2,
+            "icon": "si si-csharp"
+        },
+        {
+            "name": "Bash",
+            "rating": 2,
+            "icon": "si si-gnubash"
+        },
+        {
+            "name": "R",
+            "rating": 3,
+            "icon": "si si-r"
         }
     ],
-    "frameworks": [],
-    "applications": [],
-    "technologies": []
+    "technologies": [
+        {
+            "name": "Flutter",
+            "rating": 0,
+            "icon": "si si-flutter"
+        },
+        {
+            "name": "React",
+            "rating": 0,
+            "icon": "si si-react"
+        },
+        {
+            "name": "Git",
+            "rating": 1,
+            "icon": "si si-git"
+        },
+        {
+            "name": "jQuery",
+            "rating": 2,
+            "icon": "si si-jquery"
+        },
+        {
+            "name": "React Native",
+            "rating": 2,
+            "icon": "si si-react"
+        },
+        {
+            "name": "Native Android",
+            "rating": 2,
+            "icon": "si si-android"
+        },
+        {
+            "name": "Django",
+            "rating": 2,
+            "icon": "si si-django"
+        },
+        {
+            "name": "Firebase",
+            "rating": 1,
+            "icon": "si si-firebase"
+        },
+        {
+            "name": ".Net",
+            "rating": 2,
+            "icon": "si si-dotnet"
+        }
+    ],
+    "toolsAndapplications": [
+        {
+            "name": "Visual Studio Code",
+            "rating": 0,
+            "icon": "si si-visualstudiocode"
+        },
+        {
+            "name": "Postman",
+            "rating": 1,
+            "icon": "si si-postman"
+        },
+        {
+            "name": "Visual Studio",
+            "rating": 1,
+            "icon": "si si-visualstudio"
+        },
+        {
+            "name": "Android Studio",
+            "rating": 1,
+            "icon": "si si-androidstudio"
+        },
+        {
+            "name": "Figma",
+            "rating": 3,
+            "icon": "si si-figma"
+        }
+    ]
 }
