@@ -96,6 +96,11 @@
             "name": ".Net",
             "rating": 2,
             "icon": "si si-dotnet"
+        },
+        {
+            "name": "Unity",
+            "rating": 2,
+            "icon": "si si-unity"
         }
     ],
     "toolsAndapplications": [
