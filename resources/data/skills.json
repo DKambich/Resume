@@ -84,7 +84,7 @@
         },
         {
             "name": "Django",
-            "rating": 2,
+            "rating": 3,
             "icon": "si si-django"
         },
         {
@@ -99,7 +99,7 @@
         },
         {
             "name": "Unity",
-            "rating": 2,
+            "rating": 3,
             "icon": "si si-unity"
         }
     ],
