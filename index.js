@@ -144,7 +144,7 @@ function createSkillProgressBar(skill) {
         <span class="me-2">${name}</span>
         <span> ${skillIconHtml}</span>
       </div>
-      <div class="progress d-none d-sm-flex flex-grow-1" style="height: 1.5rem;">
+      <div class="progress d-none d-sm-flex flex-grow-1 progress-bar-height">
         <div class="progress-bar w-${skillValue}  px-3 bg-success fw-bold d-flex flex-row justify-content-between align-items-center" role="progressbar" aria-valuenow="${skillValue}" aria-valuemin="0" aria-valuemax="100">
           <span>
               ${name}
