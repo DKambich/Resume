@@ -28,9 +28,9 @@ window.onload = async () => {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 
-  let { workExperiences, education, skills } = await loadResources();
+  let { professional, education, skills } = await loadResources();
 
-  createWorkExperienceCards(workExperiences);
+  createProfessionalExperienceCards(professional);
   createEducationCards(education);
   createSkillProgressBars(skills.languages, "languages");
   createSkillProgressBars(skills.technologies, "technologies");
@@ -58,8 +58,8 @@ async function loadResources() {
   // TODO: Remove artificial delay
   // const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 3000));
 
-  const workExperiencePromise = await fetch(
-    "./resources/data/workExperience.json"
+  const professionalExperiencePromise = await fetch(
+    "./resources/data/professionalExperience.json"
   );
 
   const educationPromise = await fetch("./resources/data/education.json");
@@ -67,15 +67,15 @@ async function loadResources() {
   const skillsPromise = await fetch("./resources/data/skills.json");
 
   return {
-    workExperiences: await workExperiencePromise.json(),
+    professional: await professionalExperiencePromise.json(),
     education: await educationPromise.json(),
     skills: await skillsPromise.json(),
   };
 }
 
-function createWorkExperienceCard(workItem) {
+function createProfessionalExperienceCard(professionalExperience) {
   let { company, jobTitle, startDate, endDate, description, skills, icon } =
-    workItem;
+    professionalExperience;
 
   startDate = new Date(startDate);
   endDate = endDate == null ? endDate : new Date(endDate);
@@ -116,10 +116,14 @@ function createWorkExperienceCard(workItem) {
     `;
 }
 
-function createWorkExperienceCards(workExperiences) {
-  let workExperienceArea = document.getElementById("workExperienceArea");
-  workExperienceArea.innerHTML = workExperiences
-    .map((experience) => createWorkExperienceCard(experience))
+function createProfessionalExperienceCards(professionalExperiences) {
+  let professionalExperienceArea = document.getElementById(
+    "professionalExperienceArea"
+  );
+  professionalExperienceArea.innerHTML = professionalExperiences
+    .map((professionalExperience) =>
+      createProfessionalExperienceCard(professionalExperience)
+    )
     .join("\n");
 }
 
@@ -148,8 +152,8 @@ function createEducationCard(educationItem) {
 }
 
 function createEducationCards(educationItems) {
-  let workExperienceArea = document.getElementById("educationArea");
-  workExperienceArea.innerHTML = educationItems
+  let educationArea = document.getElementById("educationArea");
+  educationArea.innerHTML = educationItems
     .map((education) => createEducationCard(education))
     .join("\n");
 }
