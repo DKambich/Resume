@@ -212,7 +212,7 @@ function setThemeMode(isDarkMode) {
       e.classList.replace("btn-light", "btn-dark");
     });
     document.querySelectorAll(".bg-page").forEach((e) => {
-      e.classList.replace("bg-page", "bg-page-dark");
+      e.classList.add("bg-page-dark");
     });
     document.querySelectorAll(".dropdown-item").forEach((e) => {
       e.classList.add("text-light");
@@ -220,6 +220,9 @@ function setThemeMode(isDarkMode) {
     document.querySelectorAll(".card, .modal-content").forEach((e) => {
       e.classList.add("text-bg-dark");
     });
+    document
+      .querySelector(".bi-sun-fill")
+      .classList.replace("bi-sun-fill", "bi-moon-fill");
   } else {
     document.querySelectorAll(".bg-dark").forEach((e) => {
       e.classList.replace("bg-dark", "bg-light");
@@ -228,8 +231,8 @@ function setThemeMode(isDarkMode) {
     document.querySelectorAll(".btn-dark").forEach((e) => {
       e.classList.replace("btn-dark", "btn-light");
     });
-    document.querySelectorAll(".bg-page-dark").forEach((e) => {
-      e.classList.replace("bg-page-dark", "bg-page");
+    document.querySelectorAll(".bg-page").forEach((e) => {
+      e.classList.remove("bg-page-dark");
     });
     document.querySelectorAll(".dropdown-item").forEach((e) => {
       e.classList.remove("text-light");
@@ -237,6 +240,9 @@ function setThemeMode(isDarkMode) {
     document.querySelectorAll(".card, .modal-content").forEach((e) => {
       e.classList.remove("text-bg-dark");
     });
+    document
+      .querySelector(".bi-moon-fill")
+      .classList.replace("bi-moon-fill", "bi-sun-fill");
   }
 }
 
