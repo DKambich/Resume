@@ -10,3 +10,13 @@
 .progress-bar-height {
   height: 1.5rem;
 }
+
+.dropdown-item i {
+  transform: rotate(0);
+  transition: transform 0.15s ease-in-out;
+}
+
+.dropdown-item.collapsed i {
+  transform: rotate(-90deg);
+  transition: transform 0.15s ease-in-out;
+}

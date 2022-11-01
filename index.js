@@ -18,7 +18,6 @@ let isDarkMode = false;
 window.onload = async () => {
   // Setup initial page load theme
   isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  setThemeMode(isDarkMode);
 
   // Enable Bootsrap Tooltips
   var tooltipTriggerList = [].slice.call(
