@@ -18,6 +18,7 @@ let isDarkMode = false;
 window.onload = async () => {
   // Setup initial page load theme
   isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  setThemeMode(isDarkMode);
 
   // Enable Bootsrap Tooltips
   var tooltipTriggerList = [].slice.call(
@@ -258,9 +259,9 @@ function setThemeMode(isDarkMode) {
     document.querySelectorAll(".card, .modal-content").forEach((e) => {
       e.classList.add("text-bg-dark");
     });
-    document
-      .querySelector(".bi-sun-fill")
-      .classList.replace("bi-sun-fill", "bi-moon-fill");
+    document.querySelectorAll(".bi-sun-fill").forEach((e) => {
+      e.classList.replace("bi-sun-fill", "bi-moon-fill");
+    });
   } else {
     document.querySelectorAll(".bg-dark").forEach((e) => {
       e.classList.replace("bg-dark", "bg-light");
@@ -278,9 +279,9 @@ function setThemeMode(isDarkMode) {
     document.querySelectorAll(".card, .modal-content").forEach((e) => {
       e.classList.remove("text-bg-dark");
     });
-    document
-      .querySelector(".bi-moon-fill")
-      .classList.replace("bi-moon-fill", "bi-sun-fill");
+    document.querySelectorAll(".bi-moon-fill").forEach((e) => {
+      e.classList.replace("bi-moon-fill", "bi-sun-fill");
+    });
   }
 }
 
