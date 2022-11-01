@@ -13,11 +13,18 @@ const months = [
   "December",
 ];
 
+let isDarkMode = false;
+
 window.onload = async () => {
+  // Setup initial page load theme
+  isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  setThemeMode(isDarkMode);
+
   // Enable Bootsrap Tooltips
   var tooltipTriggerList = [].slice.call(
     document.querySelectorAll('[data-bs-toggle="tooltip"]')
   );
+
   var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
@@ -43,11 +50,15 @@ window.onload = async () => {
       showShareModal();
     }
   };
+
+  // Setup theming once other elements are populated
+  document.getElementById("themePage").onclick = toggleThemeMode;
+  setThemeMode(isDarkMode);
 };
 
 async function loadResources() {
   // TODO: Remove artificial delay
-  const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 1000));
+  // const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 1000));
 
   const workExperiencePromise = await fetch(
     "./resources/data/workExperience.json"
@@ -189,4 +200,47 @@ function showShareModal() {
   const shareModalDiv = document.getElementById("shareModal");
   const shareModalBS = bootstrap.Modal.getOrCreateInstance(shareModalDiv);
   shareModalBS.show();
+}
+
+function setThemeMode(isDarkMode) {
+  if (isDarkMode) {
+    document.querySelectorAll(".bg-light").forEach((e) => {
+      e.classList.replace("bg-light", "bg-dark");
+      e.classList.add("navbar-dark");
+    });
+    document.querySelectorAll(".btn-light").forEach((e) => {
+      e.classList.replace("btn-light", "btn-dark");
+    });
+    document.querySelectorAll(".bg-page").forEach((e) => {
+      e.classList.replace("bg-page", "bg-page-dark");
+    });
+    document.querySelectorAll(".dropdown-item").forEach((e) => {
+      e.classList.add("text-light");
+    });
+    document.querySelectorAll(".card, .modal-content").forEach((e) => {
+      e.classList.add("text-bg-dark");
+    });
+  } else {
+    document.querySelectorAll(".bg-dark").forEach((e) => {
+      e.classList.replace("bg-dark", "bg-light");
+      e.classList.remove("navbar-dark");
+    });
+    document.querySelectorAll(".btn-dark").forEach((e) => {
+      e.classList.replace("btn-dark", "btn-light");
+    });
+    document.querySelectorAll(".bg-page-dark").forEach((e) => {
+      e.classList.replace("bg-page-dark", "bg-page");
+    });
+    document.querySelectorAll(".dropdown-item").forEach((e) => {
+      e.classList.remove("text-light");
+    });
+    document.querySelectorAll(".card, .modal-content").forEach((e) => {
+      e.classList.remove("text-bg-dark");
+    });
+  }
+}
+
+function toggleThemeMode() {
+  isDarkMode = !isDarkMode;
+  setThemeMode(isDarkMode);
 }

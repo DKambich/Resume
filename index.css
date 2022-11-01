@@ -3,6 +3,10 @@
   /* background-color: #666; Dark Mode Color? */
 }
 
+.bg-page-dark {
+  background-color: #666;
+}
+
 .progress-bar-height {
   height: 1.5rem;
 }
