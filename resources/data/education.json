@@ -1,0 +1,19 @@
+[
+    {
+        "school": "Purdue University",
+        "degree": "Bachelor of Science in Computer Science",
+        "GPA": 3.99,
+        "attendedFrom": "2017-08-17",
+        "attendedTo": "2021-05-12",
+        "description": "Earned a degree in Computer Science with a specializations in Software Engineering and Machine Intelligence. Also earned a Certificate in Entrepreneurship.",
+        "icon": "bi bi-book-fill"
+    },
+    {
+        "school": "Deerfield High School",
+        "degree": "High School Diploma",
+        "GPA": 3.86,
+        "attendedFrom": "2013-08-17",
+        "attendedTo": "2017-05-12",
+        "description": "Earned a High School diploma. Started relevent coursework to Computer Science beginning in Sophomore year.","icon": "bi bi-book-fill"
+    }
+]

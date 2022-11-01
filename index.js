@@ -28,11 +28,10 @@ window.onload = async () => {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 
-  let { workExperiences, skills } = await loadResources();
+  let { workExperiences, education, skills } = await loadResources();
 
-  document.getElementById("workExperienceLoader").remove();
   createWorkExperienceCards(workExperiences);
-
+  createEducationCards(education);
   createSkillProgressBars(skills.languages, "languages");
   createSkillProgressBars(skills.technologies, "technologies");
   createSkillProgressBars(skills.toolsAndapplications, "toolsAndApplications");
@@ -57,16 +56,19 @@ window.onload = async () => {
 
 async function loadResources() {
   // TODO: Remove artificial delay
-  // const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 1000));
+  // const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 3000));
 
   const workExperiencePromise = await fetch(
     "./resources/data/workExperience.json"
   );
 
+  const educationPromise = await fetch("./resources/data/education.json");
+
   const skillsPromise = await fetch("./resources/data/skills.json");
 
   return {
     workExperiences: await workExperiencePromise.json(),
+    education: await educationPromise.json(),
     skills: await skillsPromise.json(),
   };
 }
@@ -94,15 +96,17 @@ function createWorkExperienceCard(workItem) {
     .join("\n");
 
   return `
-    <div class="col d-flex align-items-stretch">
+    <div class="col-md-6 d-flex align-items-stretch">
         <div class="card mb-4">
             <div class="card-body">
-                <h4 class="card-title fw-bold"><i class="me-2 ${icon}"></i>${company}</h4>
+                <h4 class="card-title fw-bold">
+                  <i class="me-1 ${icon}"></i> ${company}
+                </h4>
                 <h6 class="card-text fw-bold">${jobTitle}</h6>
-                <span class="card-subtitle text-muted"><time>${startDateText}</time> - ${endDateText}</span>
-                <p class="card-text fw-lighter">
-                    ${description}
-                </p>
+                <span class="card-subtitle text-muted">
+                  <time>${startDateText}</time> - <time>${endDateText}</time>
+                </span>
+                <p class="card-text fw-lighter">${description}</p>
             </div>
             <div class="card-footer">
                 ${skillsHTML}
@@ -116,6 +120,37 @@ function createWorkExperienceCards(workExperiences) {
   let workExperienceArea = document.getElementById("workExperienceArea");
   workExperienceArea.innerHTML = workExperiences
     .map((experience) => createWorkExperienceCard(experience))
+    .join("\n");
+}
+
+function createEducationCard(educationItem) {
+  let { school, degree, GPA, attendedFrom, attendedTo, description, icon } =
+    educationItem;
+
+  attendedFrom = new Date(attendedFrom);
+  attendedTo = new Date(attendedTo);
+
+  return `
+    <div class="col-md-6 d-flex align-items-stretch">
+      <div class="card w-100 mb-4">
+          <div class="card-body">
+              <h4 class="card-title fw-bold">
+                  <i class="me-1 ${icon}"></i> ${school}
+              </h4>
+              <h6 class="card-text fw-bold">${degree}</h6>
+              <h6 class="card-text ">${GPA} GPA</h6>
+              <span class="card-subtitle text-muted"><time>${attendedFrom.getFullYear()}</time> - <time>${attendedTo.getFullYear()}</time></span>
+              <p class="card-text fw-lighter">${description}</p>
+          </div>
+      </div>
+    </div>
+    `;
+}
+
+function createEducationCards(educationItems) {
+  let workExperienceArea = document.getElementById("educationArea");
+  workExperienceArea.innerHTML = educationItems
+    .map((education) => createEducationCard(education))
     .join("\n");
 }
 
