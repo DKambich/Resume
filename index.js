@@ -38,17 +38,7 @@ window.onload = async () => {
   createSkillProgressBars(skills.toolsAndapplications, "toolsAndApplications");
 
   setupShareModal();
-  document.getElementById("sharePage").onclick = () => {
-    if (navigator.share) {
-      navigator.share({
-        title: "Daniel Kambich Website",
-        text: "Check out Daniel Kambich's resume website!",
-        url: window.location.href,
-      });
-    } else {
-      showShareModal();
-    }
-  };
+  setupScrollToTopButton();
 
   // Setup theming once other elements are populated
   document.getElementById("themePage").onclick = toggleThemeMode;
@@ -233,6 +223,18 @@ function setupShareModal() {
 
   shareModalDiv.querySelector("#modalShareButton").onclick = () =>
     console.log("Shared!");
+
+  document.getElementById("sharePage").onclick = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: "Daniel Kambich Website",
+        text: "Check out Daniel Kambich's resume website!",
+        url: window.location.href,
+      });
+    } else {
+      showShareModal();
+    }
+  };
 }
 
 function showShareModal() {
@@ -288,4 +290,18 @@ function setThemeMode(isDarkMode) {
 function toggleThemeMode() {
   isDarkMode = !isDarkMode;
   setThemeMode(isDarkMode);
+}
+
+function setupScrollToTopButton() {
+  let header = document.getElementById("header");
+  let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  scrollToTopBtn.onclick = () =>
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  window.onscroll = function () {
+    if (window.scrollY > header.offsetTop + header.offsetHeight) {
+      scrollToTopBtn.classList.remove("opacity-0");
+    } else {
+      scrollToTopBtn.classList.add("opacity-0");
+    }
+  };
 }
