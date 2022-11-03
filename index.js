@@ -293,15 +293,22 @@ function toggleThemeMode() {
 }
 
 function setupScrollToTopButton() {
-  let header = document.getElementById("header");
+  let main = document.getElementById("main");
   let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+  let isShown = false;
+
   scrollToTopBtn.onclick = () =>
     window.scrollTo({ top: 0, behavior: "smooth" });
-  window.onscroll = function () {
-    if (window.scrollY > header.offsetTop + header.offsetHeight) {
-      scrollToTopBtn.classList.remove("opacity-0");
+
+  window.onscroll = () => {
+    if (window.scrollY > main.offsetTop) {
+      if (!isShown) {
+        isShown = true;
+        scrollToTopBtn.classList.remove("opacity-0");
+      }
     } else {
       scrollToTopBtn.classList.add("opacity-0");
+      isShown = false;
     }
   };
 }

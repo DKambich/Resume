@@ -1,19 +1,21 @@
 /* START CUSTOM FONT SECTION */
 @font-face {
-  font-family: 'resume';
-  src:  url('resources/fonts/resume.eot?d6md88');
-  src:  url('resources/fonts/resume.eot?d6md88#iefix') format('embedded-opentype'),
-    url('resources/fonts/resume.ttf?d6md88') format('truetype'),
-    url('resources/fonts/resume.woff?d6md88') format('woff'),
-    url('resources/fonts/resume.svg?d6md88#resume') format('svg');
+  font-family: "resume";
+  src: url("resources/fonts/resume.eot?d6md88");
+  src: url("resources/fonts/resume.eot?d6md88#iefix")
+      format("embedded-opentype"),
+    url("resources/fonts/resume.ttf?d6md88") format("truetype"),
+    url("resources/fonts/resume.woff?d6md88") format("woff"),
+    url("resources/fonts/resume.svg?d6md88#resume") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="resume-"], [class*=" resume-"] {
+[class^="resume-"],
+[class*=" resume-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'resume' !important;
+  font-family: "resume" !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -41,7 +43,6 @@
 
 /* END CUSTOM FONT SECTION */
 
-
 .bg-page {
   background-color: #eee;
   transition: background-color 0.15s ease-in-out;
@@ -66,9 +67,12 @@
 }
 
 #scrollToTopBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 1100;
-  right: 3rem;
-  bottom: 5rem;
+  right: 10%;
+  bottom: 8%;
   width: 50px;
   height: 50px;
   transition: opacity 0.15s ease-in-out;
