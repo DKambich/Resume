@@ -1,0 +1,13 @@
+[
+    {
+        "name": "Stabill",
+        "description": "",
+        "link": "https://github.com/DKambich/Stabill",
+        "skills": [
+            "Dart",
+            "Flutter",
+            "Firebase"
+        ],
+        "image": "./resources/images/Projects/Stabill.png"
+    }
+]
