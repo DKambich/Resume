@@ -29,13 +29,14 @@ window.onload = async () => {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
 
-  let { professional, education, skills } = await loadResources();
+  let { professional, education, skills, projects } = await loadResources();
 
   createProfessionalExperienceCards(professional);
   createEducationCards(education);
   createSkillProgressBars(skills.languages, "languages");
   createSkillProgressBars(skills.technologies, "technologies");
   createSkillProgressBars(skills.toolsAndapplications, "toolsAndApplications");
+  createProjectsCards(projects);
 
   setupShareModal();
   setupScrollToTopButton();
@@ -47,7 +48,7 @@ window.onload = async () => {
 
 async function loadResources() {
   // TODO: Remove artificial delay
-  // const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 3000));
+  const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 3000));
 
   const professionalExperiencePromise = await fetch(
     "./resources/data/professionalExperience.json"
@@ -57,10 +58,13 @@ async function loadResources() {
 
   const skillsPromise = await fetch("./resources/data/skills.json");
 
+  const projectsPromise = await fetch("./resources/data/projects.json");
+
   return {
     professional: await professionalExperiencePromise.json(),
     education: await educationPromise.json(),
     skills: await skillsPromise.json(),
+    projects: await projectsPromise.json(),
   };
 }
 
@@ -208,6 +212,40 @@ function createSkillProgressBars(skills, subskillID) {
   let subskillArea = document.getElementById(subskillID);
   subskillArea.innerHTML = skills
     .map((skill) => createSkillProgressBar(skill))
+    .join("\n");
+}
+
+function createProjectCard(project) {
+  const { name, description, link, skills, image } = project;
+
+  let skillsHTML = skills
+    .map(
+      (skill) =>
+        `<span class="badge rounded-pill text-bg-success">${skill}</span>`
+    )
+    .join("\n");
+
+  return `
+    <div class="col-md-6 d-flex align-items-stretch">
+      <div class="card w-100 mb-4">
+          <img src="${image}" class="card-img-top" alt="${name} Logo">
+          <div class="card-body">
+              <h4 class="card-title fw-bold">${name}</h4>
+              <p class="card-text fw-lighter">${description}</p>
+          </div>
+          <div class="card-footer">
+              ${skillsHTML}
+          </div>
+      </div>
+    </div>
+
+  `;
+}
+
+function createProjectsCards(projects) {
+  let projectArea = document.getElementById("projectsArea");
+  projectArea.innerHTML = projects
+    .map((project) => createProjectCard(project))
     .join("\n");
 }
 
