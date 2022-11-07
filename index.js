@@ -17,7 +17,13 @@ let isDarkMode = false;
 
 window.onload = async () => {
   // Setup initial page load theme
-  isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const savedTheme = window.localStorage.getItem("theme");
+  if (savedTheme != null) {
+    isDarkMode = savedTheme === "dark";
+  } else {
+    isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    window.localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+  }
   setThemeMode(isDarkMode);
 
   // Enable Bootsrap Tooltips
@@ -328,6 +334,7 @@ function setThemeMode(isDarkMode) {
 
 function toggleThemeMode() {
   isDarkMode = !isDarkMode;
+  window.localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   setThemeMode(isDarkMode);
 }
 
