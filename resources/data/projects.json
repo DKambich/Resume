@@ -1,7 +1,7 @@
 [
     {
         "name": "Stabill",
-        "description": "",
+        "description": "This is a test description",
         "link": "https://github.com/DKambich/Stabill",
         "skills": [
             "Dart",

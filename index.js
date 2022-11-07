@@ -48,7 +48,7 @@ window.onload = async () => {
 
 async function loadResources() {
   // TODO: Remove artificial delay
-  const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 3000));
+  // const dummyLoad = await new Promise((resolve) => setTimeout(resolve, 3000));
 
   const professionalExperiencePromise = await fetch(
     "./resources/data/professionalExperience.json"
@@ -232,6 +232,7 @@ function createProjectCard(project) {
           <div class="card-body">
               <h4 class="card-title fw-bold">${name}</h4>
               <p class="card-text fw-lighter">${description}</p>
+              <a class="btn btn-outline-secondary" href="${link}" target="_blank"><i class="bi bi-github me-2"></i>View on Github</a>
           </div>
           <div class="card-footer">
               ${skillsHTML}
