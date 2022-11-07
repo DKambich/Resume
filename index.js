@@ -44,11 +44,14 @@ window.onload = async () => {
   createSkillProgressBars(skills.toolsAndapplications, "toolsAndApplications");
   createProjectsCards(projects);
 
+  // Setup Page Actions
+  document.getElementById("themePage").onclick = toggleThemeMode;
+  document.getElementById("printPage").onclick = printPage;
   setupShareModal();
   setupScrollToTopButton();
 
   // Setup theming once other elements are populated
-  document.getElementById("themePage").onclick = toggleThemeMode;
+
   setThemeMode(isDarkMode);
 };
 
@@ -73,6 +76,8 @@ async function loadResources() {
     projects: await projectsPromise.json(),
   };
 }
+
+// Content Population Methods
 
 function createProfessionalExperienceCard(professionalExperience) {
   let { company, jobTitle, startDate, endDate, description, skills, icon } =
@@ -256,6 +261,8 @@ function createProjectsCards(projects) {
     .join("\n");
 }
 
+// Page Actions Methods
+
 function setupShareModal() {
   const shareModalDiv = document.getElementById("shareModal");
 
@@ -336,6 +343,13 @@ function toggleThemeMode() {
   isDarkMode = !isDarkMode;
   window.localStorage.setItem("theme", isDarkMode ? "dark" : "light");
   setThemeMode(isDarkMode);
+}
+
+function printPage() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF();
+  doc.text("Hello world!", 10, 10);
+  doc.save("a4.pdf");
 }
 
 function setupScrollToTopButton() {
