@@ -1,7 +1,7 @@
 [
     {
         "name": "Stabill",
-        "description": "This is a test description",
+        "description": "A multi-platform cloud-based Checkbook app built with Flutter and Firebase. It syncs inputted transaction data across sessions in realtime and is used to manage finances for your bank accounts, creating a digital checkbook experience that you can access anywhere. Working builds are verified for Android and Web.",
         "link": "https://github.com/DKambich/Stabill",
         "skills": [
             "Dart",
