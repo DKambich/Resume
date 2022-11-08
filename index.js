@@ -345,12 +345,7 @@ function toggleThemeMode() {
   setThemeMode(isDarkMode);
 }
 
-function printPage() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF();
-  doc.text("Hello world!", 10, 10);
-  doc.save("a4.pdf");
-}
+function printPage() {}
 
 function setupScrollToTopButton() {
   let main = document.getElementById("main");
